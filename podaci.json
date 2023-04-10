@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "item": {
+        "type": "t-shirt",
+        "size": "M",
+        "color": "#"
+      },
+      "id": "1"
+    },
+    {
+      "item": {
+        "type": "Sweater",
+        "size": "M",
+        "color": "#6b6b6b",
+        "img": "/src/pictures/t-shirt.jpg"
+      },
+      "id": "_cfrweC"
+    }
+  ],
+  "types": [
+    "T-shirt",
+    "Sweater",
+    "Pants",
+    "Jeans",
+    "Jacket",
+    "Coat",
+    "Shoes"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45"
+  ]
+}
