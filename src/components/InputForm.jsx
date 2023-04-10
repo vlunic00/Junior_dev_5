@@ -66,8 +66,8 @@ function InputForm({ setWardrobe }){
     
     return (
         <>
-        <form onSubmit={sendData}>
-         <div>
+        <form className="input-form" onSubmit={sendData}>
+         <div className="input">
             <label>
                 Type:
                 <select
@@ -83,7 +83,7 @@ function InputForm({ setWardrobe }){
                 </select>
             </label>
          </div>
-         <div>
+         <div className="input">
             <label>
                 Size:
                 <select
@@ -99,10 +99,10 @@ function InputForm({ setWardrobe }){
                 </select>
             </label>
          </div>
-         <div>
+         <div className="input">
          <label>
             Color:
-            <input type="color"
+            <input className="color-input" type="color"
             name="color"
             value ={formData.color}
             onChange={inputChange}
@@ -110,7 +110,7 @@ function InputForm({ setWardrobe }){
             ></input>    
             </label>
          </div>
-         <div>
+         <div className="input">
             <label>
                 Image:
                 <select

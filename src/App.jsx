@@ -26,11 +26,20 @@ function App() {
   return (
     <>
     {write(wardrobe)}
-    <InputForm setWardrobe={setWardrobe}/>
-    <Table
-      warderobe={wardrobe}
-      setWarderobe={setWardrobe}
-    />
+    <div className='title'>
+      <h1>My Warderobe</h1>
+    </div>
+    <div className='front-page'>
+      <InputForm setWardrobe={setWardrobe}/>
+      <div className='line' />
+      <div className='table-section'>
+        <h2>List</h2>  
+        <Table
+          warderobe={wardrobe}
+          setWarderobe={setWardrobe}
+        />
+      </div>
+    </div>
     </>
   )
 }

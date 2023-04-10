@@ -67,3 +67,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+select{
+  width: 100%;
+  height: 3em;
+  padding: 0.2em;
+  background-color: aliceblue;
+}
+
+table{
+  width: 100%;
+}
