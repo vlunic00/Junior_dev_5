@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-function TableRow({warderobe, setWarderobe}){
+function TableRow({warderobe, setWarderobe, clothingTypes, sizesOfClothing, setOfPictures, picKeys}){
     
     const [change, setChange] = useState(false)
     const [formData, setFormData] = useState([])
@@ -54,10 +54,69 @@ function TableRow({warderobe, setWarderobe}){
     return(
         <tr>
             <td>{warderobe.id}</td>
-            <td>{warderobe.item.type}</td>
-            <td>{warderobe.item.size}</td>
-            <td>{warderobe.item.color}</td>
-            <td><img src="{warderobe.item.img_path}" alt="Clothing image"/></td>
+            <td>
+                {change ? (
+                    <select
+                    name="type"
+                    value={formData.type}
+                    onChange={inputChange}
+                    required
+                   >
+                       <option value="" disabled selected>--Choose clothing type--</option>
+                       {clothingTypes.map((type) => (
+                           <option key={type} value={type}>{type}</option>
+                       ))}
+                   </select>
+                ) : (
+                    warderobe.item.type
+                )}
+                </td>
+            <td>
+                {change ? (
+                    <select
+                    name="size"
+                    value={formData.size}
+                    onChange={inputChange}
+                    required
+                   >
+                       <option value="" disabled selected>--Choose clothing size--</option>
+                       {sizesOfClothing.map((size) => (
+                           <option key={size} value={size}>{size}</option>
+                       ))}
+                   </select>
+                ): (
+                    warderobe.item.size
+                )}
+            </td>
+            <td>
+                {change ? (
+                    <input className="color-input" type="color"
+                    name="color"
+                    value ={formData.color}
+                    onChange={inputChange}
+                    required
+                    ></input>
+                ) : (
+                    warderobe.item.color
+                )}
+                </td>
+            <td>
+                {change ? (
+                    <select
+                    name="img_path"
+                    value={formData.img_path}
+                    onChange={inputChange}
+                    required
+                   >
+                    <option value="" disabled selected>--Choose clothing image--</option>
+                        {picKeys.map((key) => (
+                            <option key={key} value={setOfPictures[key]}>{key}</option>
+                        ))}
+                   </select>
+                ) : (
+                    <img src={warderobe.item.img_path} alt="Clothing image" className="clothing-image"/>
+                )}
+            </td>
             <td>
                 <button onClick={deleteData}>Delete</button>
                 {change ? (

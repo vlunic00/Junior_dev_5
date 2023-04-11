@@ -1,7 +1,7 @@
 import TableRow from "./TableRow";
 
 
-function Table ({warderobe, setWarderobe}){
+function Table ({warderobe, setWarderobe, clothingTypes, sizesOfClothing, setOfPictures, picKeys}){
     return (
         <table>
             <thead>
@@ -19,6 +19,10 @@ function Table ({warderobe, setWarderobe}){
                         key={w.id}
                         warderobe={w}
                         setWarderobe={setWarderobe}
+                        clothingTypes={clothingTypes}
+                        sizesOfClothing={sizesOfClothing}
+                        setOfPictures={setOfPictures}
+                        picKeys={picKeys}
                     />
                 ))}
             </tbody>

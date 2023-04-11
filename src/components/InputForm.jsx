@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import tShirtPic from '../pictures/t-shirt.jpg'
 
-function InputForm({ setWardrobe }){
+function InputForm({ setWardrobe, clothingTypes, sizesOfClothing, setOfPictures, picKeys }){
     
     const [formData, setData] = useState({
         type: "",
@@ -11,38 +10,13 @@ function InputForm({ setWardrobe }){
         image: ""
     })
 
-    const [clothingTypes, setClothingTypes] = useState([])
-    const [sizesOfClothing, setSizesOfClothing] = useState([])
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const fetchClothingTypes = axios.get("/types")
-            const fetchClothingSizes = axios.get("/sizes")
-
-            const requirementArray = [fetchClothingTypes, fetchClothingSizes]
-
-            try {
-                const [firstResult, secondResult] = await Promise.all(requirementArray)
-
-                setClothingTypes(firstResult.data)
-                setSizesOfClothing(secondResult.data)
-
-            }
-            catch (error){
-                console.log(error)
-            }
-        }
-
-        fetchData()
-    }, [])
-
     function processData(object){
         return {
             item: {
                 type: object.type,
                 size: object.size,
                 color: object.color,
-                img: object.img_path
+                img_path: object.img_path
             }
         }
 }
@@ -120,9 +94,9 @@ function InputForm({ setWardrobe }){
                  required
                 >
                     <option value="" disabled selected>--Choose clothing image--</option>
-                    {clothingTypes.map((type) => (
-                        <option key={type} value={tShirtPic}>{type}</option>
-                    ))}
+                        {picKeys.map((key) => (
+                            <option key={key} value={setOfPictures[key]}>{key}</option>
+                        ))}
                 </select>
             </label>
          </div>

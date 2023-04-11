@@ -2,18 +2,45 @@
   "items": [
     {
       "item": {
-        "type": "t-shirt",
+        "type": "T-shirt",
         "size": "M",
-        "color": "#"
+        "color": "#00000",
+        "img_path": "/images/t-shirt.jpg"
       },
       "id": "1"
+    },
+    {
+      "item": {
+        "type": "Sweater",
+        "size": "M",
+        "color": "#e2e8b0",
+        "img_path": "/images/sweater.jpg"
+      },
+      "id": "PhOpmTc"
+    },
+    {
+      "item": {
+        "type": "Pants",
+        "size": "L",
+        "color": "#2a3b93",
+        "img_path": "/images/pants.jpg"
+      },
+      "id": "lnUwHYh"
+    },
+    {
+      "item": {
+        "type": "Coat",
+        "size": "M",
+        "color": "#321515",
+        "img_path": "/images/coat.jpg"
+      },
+      "id": "Uzj4tcp"
     }
   ],
   "types": [
     "T-shirt",
     "Sweater",
     "Pants",
-    "Jeans",
     "Jacket",
     "Coat",
     "Shoes"
